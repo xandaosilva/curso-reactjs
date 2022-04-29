@@ -7,6 +7,7 @@ import CarDetails from './components/CarDetails';
 import './App.css';
 
 import City from "./assets/city.jpg";
+import Fragments from './components/Fragments';
 
 function App() {
   const cars = [
@@ -44,6 +45,9 @@ function App() {
       {cars.map((car) => (
         <CarDetails key={car.id} brand={car.brand} km={car.km} color={car.color} newCar={car.newCar} />
       ))}
+
+      {/* Fragments */}
+      <Fragments propFragment="teste"/>
     </div>
   );
 }
