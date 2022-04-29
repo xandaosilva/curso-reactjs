@@ -3,11 +3,12 @@ import ListRender from './components/ListRender';
 import ConditionalRender from './components/ConditionalRender';
 import ShowUserName from './components/ShowUserName';
 import CarDetails from './components/CarDetails';
+import Fragments from './components/Fragments';
+import Container from './components/Container';
 
 import './App.css';
 
 import City from "./assets/city.jpg";
-import Fragments from './components/Fragments';
 
 function App() {
   const cars = [
@@ -48,6 +49,14 @@ function App() {
 
       {/* Fragments */}
       <Fragments propFragment="teste"/>
+
+      {/* Children */}
+      <Container myValue="testing 1">
+          <p>Este é o conteúdo do primeiro container</p>
+      </Container>
+      <Container myValue="testing 2">
+          <h5>Este é o conteúdo do segundo container</h5>
+      </Container>
     </div>
   );
 }
