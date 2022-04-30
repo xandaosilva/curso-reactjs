@@ -1,3 +1,5 @@
+import { useState } from 'react';
+
 import ManageData from './components/ManageData';
 import ListRender from './components/ListRender';
 import ConditionalRender from './components/ConditionalRender';
@@ -6,6 +8,8 @@ import CarDetails from './components/CarDetails';
 import Fragments from './components/Fragments';
 import Container from './components/Container';
 import ExecuteFunction from './components/ExecuteFunction';
+import Message from './components/Message';
+import ChangeMessageState from './components/ChangeMessageState';
 
 import './App.css';
 
@@ -18,8 +22,14 @@ function App() {
     {id: 3, brand: "Renault", km: 234, color: "Azul", newCar: false},
   ];
 
+  const [message, setMessage] = useState("");
+
   function showMessage(){
     console.log("Evento do componente pai");
+  }
+
+  const handleMessage = (msg) => {
+    setMessage(msg);
   }
 
   return (
@@ -65,6 +75,10 @@ function App() {
 
       {/* Executar função */}
       <ExecuteFunction myFunction={showMessage} />
+
+      {/* state lift */}
+      <Message msg={message} />
+      <ChangeMessageState handleMessage={handleMessage} />
     </div>
   );
 }
