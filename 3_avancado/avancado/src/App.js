@@ -14,6 +14,7 @@ import ChangeMessageState from './components/ChangeMessageState';
 import './App.css';
 
 import City from "./assets/city.jpg";
+import UserDetails from './components/UserDetails';
 
 function App() {
   const cars = [
@@ -31,6 +32,12 @@ function App() {
   const handleMessage = (msg) => {
     setMessage(msg);
   }
+
+  const users = [
+    {id: 1, name: "Alexandre", age: 29, job: "Programmer"},
+    {id: 2, name: "Laura", age: 17, job: "Student"},
+    {id: 3, name: "Maria", age: 38, job: "Lawyer"},
+  ];
 
   return (
     <div className="App">
@@ -79,6 +86,11 @@ function App() {
       {/* state lift */}
       <Message msg={message} />
       <ChangeMessageState handleMessage={handleMessage} />
+
+      {/* Users list */}
+      {users.map((user) => (
+        <UserDetails key={user.id} name={user.name} age={user.age} job={user.job} />
+      ))}
     </div>
   );
 }
