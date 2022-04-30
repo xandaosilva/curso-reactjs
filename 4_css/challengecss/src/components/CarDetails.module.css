@@ -1,0 +1,14 @@
+.car_container{
+    border-bottom: solid 2px darkcyan;
+    font-weight: bold;
+    font-size: 16px;
+    transition: all 500ms ease;
+}
+
+.car_container:hover{
+    color: darkcyan;
+}
+
+.car_container_brand{
+    text-transform: uppercase;
+}
