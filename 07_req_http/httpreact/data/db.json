@@ -1,11 +1,6 @@
 {
   "products": [
     {
-      "id": 1,
-      "name": "Camisa",
-      "price": 59.9
-    },
-    {
       "id": 2,
       "name": "Calça vermelha",
       "price": 90
@@ -39,36 +34,6 @@
       "name": "kimono jiujitsu",
       "price": "300",
       "id": 8
-    },
-    {
-      "name": "teste",
-      "price": "5",
-      "id": 9
-    },
-    {
-      "name": "teste",
-      "price": "5",
-      "id": 10
-    },
-    {
-      "name": "teste",
-      "price": "5",
-      "id": 11
-    },
-    {
-      "name": "teste 1",
-      "price": "12",
-      "id": 12
-    },
-    {
-      "name": "teste 1",
-      "price": "12",
-      "id": 13
-    },
-    {
-      "name": "teste 1",
-      "price": "12",
-      "id": 14
     }
   ]
 }
