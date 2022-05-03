@@ -39,6 +39,16 @@
       "name": "kimono jiujitsu",
       "price": "300",
       "id": 8
+    },
+    {
+      "name": "teste",
+      "price": "5",
+      "id": 9
+    },
+    {
+      "name": "teste",
+      "price": "5",
+      "id": 10
     }
   ]
 }
