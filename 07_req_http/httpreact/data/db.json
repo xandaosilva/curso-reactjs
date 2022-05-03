@@ -29,6 +29,16 @@
       "name": "teste",
       "price": "10",
       "id": 6
+    },
+    {
+      "name": "kimono",
+      "price": "250",
+      "id": 7
+    },
+    {
+      "name": "kimono jiujitsu",
+      "price": "300",
+      "id": 8
     }
   ]
 }
