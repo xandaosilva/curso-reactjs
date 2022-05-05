@@ -30,7 +30,7 @@ export const useInsertDocument = (docCollection) => {
     const insertDocument = async (document) => {
         checkCancelbeforeDispatch({ type: "LOADING" });
         try {
-            const newDocument = { ...document, createDate: Timestamp.now() };
+            const newDocument = { ...document, createdAt: Timestamp.now() };
             const insertedDocument = await addDoc(collection(db, docCollection), newDocument);
             checkCancelbeforeDispatch({ type: "INSERTED_DOC", payload: insertedDocument });
         } catch (error) {
