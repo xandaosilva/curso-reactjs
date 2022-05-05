@@ -10,17 +10,33 @@ const CreatePost = () => {
     const [title, setTitle] = useState("");
     const [image, setImage] = useState("");
     const [body, setBody] = useState("");
-    const [tags, setTags] = useState("");
-    const [formError, setFormError] = useState([]);
+    const [tags, setTags] = useState([]);
+    const [formError, setFormError] = useState("");
     const {insertDocument, response} = useInsertDocument("posts");
     const {user} = useAuthValue();
-
+    const navigate = useNavigate();
 
     const handleSubmit = (e) =>{
         e.preventDefault();
         setFormError("");
 
-        insertDocument({ title, image, body, tags, uid: user.uid, createdBy: user.displayName });
+        try {
+            new URL(image);
+        } catch (error) {
+            setFormError("A imagem precisa ser uma URL");
+        }
+
+        const tagsArray = tags.split(",").map((tag) => tag.trim().toLowerCase());
+
+        if(!title || !image || !tags || !body){
+            setFormError("Pro favor, preencha todos os campos!");
+        }
+
+        if(formError) return;
+
+        insertDocument({ title, image, body, tags: tagsArray, uid: user.uid, createdBy: user.displayName });
+
+        navigate("/");
     }
     
     return (
@@ -47,6 +63,7 @@ const CreatePost = () => {
                 {!response.loading && <button className="btn">Cadastrar</button>}
                 {response.loading && <button className="btn" disabled>Aguarde...</button>}
                 {response.error && <p className="error">{response.error}</p>}
+                {formError && <p className="error">{formError}</p>}
             </form>
         </div>
     )
