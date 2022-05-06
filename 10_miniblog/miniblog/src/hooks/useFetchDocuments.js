@@ -14,17 +14,19 @@ export const useFetchDocuments = ( docCollection, search = null, uid = null) => 
 
             setLoading(true);
 
-            const collectionRef = collection(db, docCollection);
+            const collectionRef = await collection(db, docCollection);
 
             try {
                 let q;
-                q = await query(collection, orderBy("createdAt", "desc"));
+                q = await query(collectionRef, orderBy("createdAt", "desc"));
 
                 await onSnapshot(q, (querySnapshot) => {
-                    querySnapshot.docs.map((doc) => ({
-                        id: doc.id,
-                        ...doc.data()
-                    }));
+                    setDocuments(
+                        querySnapshot.docs.map((doc) => ({
+                            id: doc.id,
+                            ...doc.data(),
+                        }))
+                    );
                 });
 
                 setLoading(false);
@@ -43,6 +45,3 @@ export const useFetchDocuments = ( docCollection, search = null, uid = null) => 
 
     return { documents, loading, error };
 }
-
-
-
