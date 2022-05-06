@@ -16,7 +16,7 @@ const Dashboard = () => {
     }
 
     return (
-        <div>
+        <div className={styles.dashboard}>
             <h2>Dashboard</h2>
             <p>Gerencie os seus posts</p>
             {posts && posts.length === 0 ? 
@@ -26,7 +26,7 @@ const Dashboard = () => {
                 </div>) : 
                 (
                     <>
-                        <div>
+                        <div className={styles.post_header}>
                             <span>Título</span>
                             <span>Ações</span>
                         </div>
