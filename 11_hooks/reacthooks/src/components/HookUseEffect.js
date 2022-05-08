@@ -4,12 +4,16 @@ const HookUseEffect = () => {
     useEffect(() => {
         console.log("Estou sendo executado!!!");
     });
-
+    
     const [number, setNumber] = useState(1);
 
     const changeSomething = () => {
         setNumber(number + 1);
     }
+
+    useEffect(() => {
+        console.log("Serei executado apenas uma vez!!!");
+    }, []);
 
     return (
         <div>
