@@ -22,6 +22,14 @@ const HookUseEffect = () => {
             console.log("Sou executado apenas quando o anotheNumber é executado!!!");
     }, [anotherNumber]);
 
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            console.log("Hello world");
+        },  2000);
+
+        return () => clearTimeout(timer);
+    }, [anotherNumber]);
+
     return (
         <div>
             <h2>useEffect</h2>
