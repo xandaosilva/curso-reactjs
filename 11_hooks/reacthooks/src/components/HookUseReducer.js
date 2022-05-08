@@ -12,6 +12,8 @@ const HookUseReducer = () => {
         {id: 4, text: "Estudar lógica de programação"}
     ];
 
+    const [taskText, setTaskText] = useState();
+
     const taskReducer = (state, action) => {
         switch(action.type){
             case "ADD":
@@ -25,7 +27,6 @@ const HookUseReducer = () => {
         }
     }
 
-    const [taskText, setTaskText] = useState();
     const [tasks, dispatchTasks] = useReducer(taskReducer, initialTasks);
 
     const handleSubmit = (e) =>{
