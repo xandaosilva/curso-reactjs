@@ -104,4 +104,29 @@ const updatePhoto = async (req, res) => {
     res.status(200).json({photo, message: "Foto atualizada com sucesso."});
 }
 
-module.exports = { insertPhoto, deletePhoto, getAllPhotos, getUserPhotos, getPhotoById, updatePhoto };
+// Like funtionalitty
+const likePhoto = async (req, res) => {
+    const { id } = req.params;
+    const reqUser = req.user;
+    const photo = await Photo.findById(id);
+
+    // Check if photo exists
+    if(!photo){
+        res.status(404).json({errors: ["Foto não encontrada."]});
+        return;
+    }
+
+    // Check if user already liked a photo
+    if(photo.likes.includes(reqUser._id)){
+        res.status(422).json({erros: ["Você já curtiu a foto."]});
+        return;
+    }
+
+    // Put user id in likes array
+    photo.likes.push(reqUser._id);
+    photo.save();
+
+    res.status(200).json({photoId: id, userId: reqUser._id, message: "A foto foi curtida."});
+}
+
+module.exports = { insertPhoto, deletePhoto, getAllPhotos, getUserPhotos, getPhotoById, updatePhoto, likePhoto };
