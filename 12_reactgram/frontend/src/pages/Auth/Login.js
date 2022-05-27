@@ -30,7 +30,7 @@ const Login = () => {
     // Clean all auth states
     useEffect(() => {
         dispatch(reset());
-    }, dispatch);
+    }, [dispatch]);
 
     return (
         <div id="login">
