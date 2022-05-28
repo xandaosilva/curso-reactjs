@@ -14,7 +14,7 @@ import { useParams } from "react-router-dom";
 
 // Redux
 import { getUserDetails } from "../../slices/userSlice";
-import { publishPhoto, resetMessage, getUserPhotos } from "../../slices/photoSlice";
+import { publishPhoto, resetMessage, getUserPhotos, deletePhoto } from "../../slices/photoSlice";
 
 const Profile = () => {
     const { id } = useParams();
@@ -38,8 +38,11 @@ const Profile = () => {
         dispatch(getUserPhotos(id));
     }, [dispatch, id]);
 
-    if(loading){
-        return (<p>Carregando...</p>);
+    // Reset component message
+    function resetComponentMessage() {
+        setTimeout(() => {
+            dispatch(resetMessage());
+        }, 2000);
     }
 
     const handleFile = (e) => {
@@ -47,6 +50,7 @@ const Profile = () => {
         setImage(image);
     }
 
+    // Publish a new photo
     const submitHandle = (e) => {
         e.preventDefault();
 
@@ -58,10 +62,17 @@ const Profile = () => {
         dispatch(publishPhoto(formData));
 
         setTitle("");
+        resetComponentMessage();
+    }
 
-        setTimeout(() => {
-            dispatch(resetMessage());
-        }, 2000);
+    // Delete a photo
+    const handleDelete = (id) => {
+        dispatch(deletePhoto(id));
+        resetComponentMessage();
+    }
+
+    if(loading){
+        return (<p>Carregando...</p>);
     }
 
     return (
@@ -108,7 +119,7 @@ const Profile = () => {
                                         <BsFillEyeFill />
                                     </Link>
                                     <BsPencilFill />
-                                    <BsXLg />
+                                    <BsXLg onClick={() => handleDelete(photo._id)} />
                                 </div>) : 
                                 (<Link to={`/photos/${photo._id}`} className="btn">Ver</Link>)
                             }
