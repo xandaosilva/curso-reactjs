@@ -142,3 +142,20 @@ console.log(a3);
 console.log(a4);
 console.log(car);
 
+// Classes
+class Product{
+    constructor(name, price){
+        this.name = name;
+        this.price = price;
+    }
+
+    productWithDiscount(discount){
+        return this.price * ((100 - discount)/100);
+    }
+}
+
+const shirt = new Product("Camiseta", 20);
+
+console.log(shirt);
+console.log(shirt.productWithDiscount(10));
+
