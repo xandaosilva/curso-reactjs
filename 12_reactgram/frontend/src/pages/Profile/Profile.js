@@ -166,7 +166,7 @@ const Profile = () => {
                                     <BsPencilFill onClick={() => handleEdit(photo)} />
                                     <BsXLg onClick={() => handleDelete(photo._id)} />
                                 </div>) : 
-                                (<Link to={`/photos/${photo._id}`} className="btn">Ver</Link>)
+                                (<Link to={`/photos/${photo._id}`} className="btn">Ver mais</Link>)
                             }
                         </div>
                     ))}

@@ -55,3 +55,10 @@
     width: 100%;
     margin-bottom: 1em;
 }
+
+.photo .btn{
+    display: block;
+    max-width: 80px;
+    text-align: center;
+    margin: 0.5em 0 2em 0;
+}
