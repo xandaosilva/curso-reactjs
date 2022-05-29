@@ -126,3 +126,19 @@ const { name: productName, price, category: productCategory, color } = productDe
 
 console.log(`${f1} - ${f2} - ${f3}`);
 console.log(`Product name: ${productName} - Price: ${price} - Category: ${productCategory} - Color: ${color}`);
+
+// Spread operator
+const a1 = [1, 2, 3];
+const a2 = [4, 5, 6];
+const a3 = [...a1, ...a2];
+const a4 = [0, ...a1, 4];
+
+const carName = { name: "Gol" };
+const carBrand = { brand: "VW" };
+const otherInfos = { km: 10000, price: 50000 };
+const car = { ...carName, ...carBrand, ...otherInfos };
+
+console.log(a3);
+console.log(a4);
+console.log(car);
+
