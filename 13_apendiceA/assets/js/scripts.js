@@ -117,3 +117,12 @@ const userName = "Alexandre";
 const userAge = "29";
 
 console.log(`Username: ${userName} - Age: ${userAge}`);
+
+// Destructuring
+const fruits = ["Maçã", "Abacaxi", "Abacate"];
+const [f1, f2, f3] = fruits;
+const productDetails = { name: "Mouse", price: 50, category: "Periféricos", color: "Azul" };
+const { name: productName, price, category: productCategory, color } = productDetails;
+
+console.log(`${f1} - ${f2} - ${f3}`);
+console.log(`Product name: ${productName} - Price: ${price} - Category: ${productCategory} - Color: ${color}`);
