@@ -49,8 +49,8 @@ const updatePhoto = async (data, id, token) => {
 }
 
 // Get photo by ID
-const getPhoto = async (id) => {
-    const config = requestConfig("GET");
+const getPhoto = async (id, token) => {
+    const config = requestConfig("GET", null, token);
 
     try {
         const res = await fetch(api + "/photos/" + id, config).then((res) => res.json()).catch((err) => err);
