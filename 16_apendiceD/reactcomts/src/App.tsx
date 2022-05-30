@@ -4,6 +4,9 @@ import SecondComponent from "./components/SecondComponent";
 import Destructuring, { Category } from "./components/Destructuring";
 import State from "./components/State";
 
+// type
+type textOrNull = string | null;
+
 function App() {
 
   // Variáveis
@@ -13,6 +16,11 @@ function App() {
 
   // funções
   const userGreeting = (name: string): string => `Olá, ${name} !`;
+
+  // type
+  const myText: textOrNull = "Tem algum texto aqui.";
+  let mySecondText: textOrNull = null;
+  mySecondText = "Olá pessoas";
 
   return (
     <div className="App">
@@ -30,6 +38,9 @@ function App() {
       <Destructuring title="Curso React" content="Aprendendo React" commentsQty={3} tags={["html", "react", "typeScript"]} category={Category.TS} />
       <hr />
       <State />
+      <hr />
+      <p>{myText}</p>
+      <p>{mySecondText}</p>
     </div>
   );
 }
