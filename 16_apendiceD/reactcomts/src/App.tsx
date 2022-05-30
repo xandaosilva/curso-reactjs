@@ -1,3 +1,6 @@
+// importação de componentes
+import FirstComponent from "./components/FirstComponent";
+
 function App() {
 
   // Variáveis
@@ -16,6 +19,8 @@ function App() {
       {isWorking ? (<p>Está trabalhando</p>) : (<p>Não está trabalhando</p>)}
       <hr />
       <h3>{userGreeting(name)}</h3>
+      <hr />
+      <FirstComponent />
     </div>
   );
 }

@@ -3,7 +3,9 @@ import React, { ReactElement } from 'react'
 
 const FirstComponent = (): ReactElement => {
     return (
-        <div>FirstComponent</div>
+        <div>
+            <h1>Meu primeiro componente</h1>
+        </div>
     );
 }
 
