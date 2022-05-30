@@ -1,7 +1,7 @@
 // importação de componentes
 import FirstComponent from "./components/FirstComponent";
 import SecondComponent from "./components/SecondComponent";
-import Destructuring from "./components/Destructuring";
+import Destructuring, { Category } from "./components/Destructuring";
 import State from "./components/State";
 
 function App() {
@@ -27,7 +27,7 @@ function App() {
       <hr />
       <SecondComponent name="Segundo" />
       <hr />
-      <Destructuring title="Curso React" content="Aprendendo React" commentsQty={3} tags={["html", "react", "typeScript"]} />
+      <Destructuring title="Curso React" content="Aprendendo React" commentsQty={3} tags={["html", "react", "typeScript"]} category={Category.TS} />
       <hr />
       <State />
     </div>

@@ -1,8 +1,10 @@
 import React from 'react'
 
-type Props = { title: string, content: string, commentsQty: number, tags: string[] };
+export enum Category{ JS = "JavaScript", TS = "TypeScript", PY = "Python" };
 
-const Destructuring = ({title, content, commentsQty, tags}: Props) => {
+type Props = { title: string, content: string, commentsQty: number, tags: string[], category: Category };
+
+const Destructuring = ({title, content, commentsQty, tags, category}: Props) => {
     return (
         <div>
             <h2>{title}</h2>
@@ -11,6 +13,7 @@ const Destructuring = ({title, content, commentsQty, tags}: Props) => {
             <div>
                 {tags.map((tag) => (<span>#{tag}</span>))}
             </div>
+            <h4>Categoria: {category}</h4>
         </div>
     );
 }
