@@ -2,6 +2,7 @@
 import FirstComponent from "./components/FirstComponent";
 import SecondComponent from "./components/SecondComponent";
 import Destructuring from "./components/Destructuring";
+import State from "./components/State";
 
 function App() {
 
@@ -27,6 +28,8 @@ function App() {
       <SecondComponent name="Segundo" />
       <hr />
       <Destructuring title="Curso React" content="Aprendendo React" commentsQty={3} tags={["html", "react", "typeScript"]} />
+      <hr />
+      <State />
     </div>
   );
 }
