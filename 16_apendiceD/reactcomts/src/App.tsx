@@ -1,5 +1,7 @@
 // importação de componentes
 import FirstComponent from "./components/FirstComponent";
+import SecondComponent from "./components/SecondComponent";
+import Destructuring from "./components/Destructuring";
 
 function App() {
 
@@ -21,6 +23,10 @@ function App() {
       <h3>{userGreeting(name)}</h3>
       <hr />
       <FirstComponent />
+      <hr />
+      <SecondComponent name="Segundo" />
+      <hr />
+      <Destructuring title="Curso React" content="Aprendendo React" commentsQty={3} tags={["html", "react", "typeScript"]} />
     </div>
   );
 }
