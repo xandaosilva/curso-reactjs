@@ -5,6 +5,7 @@ import FirstComponent from "./components/FirstComponent";
 import SecondComponent from "./components/SecondComponent";
 import Destructuring, { Category } from "./components/Destructuring";
 import State from "./components/State";
+import Context from "./components/Context";
 
 // type
 type textOrNull = string | null;
@@ -52,6 +53,8 @@ function App() {
         <hr />
         <p>{myText}</p>
         <p>{mySecondText}</p>
+        <hr />
+        <Context />
       </div>
     </AppContext.Provider>
   );
