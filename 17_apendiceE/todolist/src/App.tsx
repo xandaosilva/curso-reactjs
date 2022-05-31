@@ -6,6 +6,7 @@ import styles from "./App.module.css";
 // Components
 import Footer from './components/Footer';
 import Header from './components/Header';
+import Modal from './components/Modal';
 import TaskForm from './components/TaskForm';
 import TaskList from './components/TaskList';
 
@@ -21,6 +22,7 @@ function App() {
 
   return (
     <div>
+      <Modal />
       <Header />
       <main className={styles.main}>
         <div>
